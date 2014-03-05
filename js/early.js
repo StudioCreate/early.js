@@ -1,6 +1,6 @@
 /*!
  * pastebin.com/EzG63Yj0
- * github.com/englishextra/shimansky.biz/blob/master/js/init.js
+ * github.com/englishextra/early.js/blob/master/js/early.js
  */
 /*!
  * Modernizr 2.6.2 (Custom Build) | MIT & BSD  * Build:
@@ -47,6 +47,7 @@ var earlyOsVersion=function(a,b){return a.Modernizr&&typeof a.Detectizr?Moderniz
 function addEvent(a,b,c){if(a.addEventListener)a.addEventListener(b,c,!1);else{c.$$guid||(c.$$guid=addEvent.guid++);a.events||(a.events={});var d=a.events[b];d||(d=a.events[b]={},a["on"+b]&&(d[0]=a["on"+b]));d[c.$$guid]=c;a["on"+b]=handleEvent}}addEvent.guid=1;function removeEvent(a,b,c){a.removeEventListener?a.removeEventListener(b,c,!1):a.events&&a.events[b]&&delete a.events[b][c.$$guid]} function handleEvent(a){var b=!0;a=a||fixEvent(((this.ownerDocument||this.document||this).parentWindow||window).event);var c=this.events[a.type],d;for(d in c)this.$$handleEvent=c[d],!1===this.$$handleEvent(a)&&(b=!1);return b}function fixEvent(a){a.preventDefault=fixEvent.preventDefault;a.stopPropagation=fixEvent.stopPropagation;return a}fixEvent.preventDefault=function(){this.returnValue=!1};fixEvent.stopPropagation=function(){this.cancelBubble=!0};
 /*!
  * domready (c) Dustin Diaz 2012 - License MIT
+ * 
  */
 (function(a,b){typeof module!="undefined"?module.exports=b():typeof define=="function"&&typeof define.amd=="object"?define(b):this[a]=b()}("domready",function(a){function m(a){l=1;while(a=b.shift())a()}var b=[],c,d=!1,e=document,f=e.documentElement,g=f.doScroll,h="DOMContentLoaded",i="addEventListener",j="onreadystatechange",k="readyState",l=/^loade|c/.test(e[k]);return e[i]&&e[i](h,c=function(){e.removeEventListener(h,c,d),m()},d),g&&e.attachEvent(j,c=function(){/^c/.test(e[k])&&(e.detachEvent(j,c),m())}),a=g?function(c){self!=top?l?c():b.push(c):function(){try{f.doScroll("left")}catch(b){return setTimeout(function(){a(c)},50)}c()}()}:function(a){l?a():b.push(a)}}));
 /*!
@@ -71,7 +72,6 @@ var earlySelfLocationHost=self.location.host||"";
 var earlyDevicePixelRatio=window.devicePixelRatio?window.devicePixelRatio:1;
 var earlyDeviceWidth=window.innerWidth?0<window.innerWidth?window.innerWidth:screen.width:"";
 var earlyIsRetina=function(dpr){if(dpr){return 2<=dpr?1:"";}}((window.devicePixelRatio||Math.round(window.screen.availWidth/document.documentElement.clientWidth))||"");
-var earlyIsHandheld=("undefined"!==typeof earlyIsMobileBrowser&&earlyIsMobileBrowser&&(earlyIsHandheld=1))||"";
 var earlyHasCssgradients=("undefined"!==typeof window.Modernizr&&Modernizr.cssgradients&&(earlyHasCssgradients=1))||"";
 var earlyHasTouch=("undefined"!==typeof window.Modernizr&&Modernizr.touch&&(earlyHasTouch=1))||"";
 /*!

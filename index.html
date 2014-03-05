@@ -2,12 +2,12 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Simple Responsive Navigation - CodePen</title>
+		<title>early.js&#160;&#8212; a JS bundle to be included first</title>
 		<meta name="viewport" content="width=device-width, initial-scale =1.0, user-scalable= no">
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,700italic,400italic&subset=latin,cyrillic" />
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400italic,700,700italic&subset=latin,cyrillic" />
-		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.min.css" />
-		<link rel="stylesheet" href="/libs/early.js/css/bundle.min.css" />
+		<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.min.css" /> -->
+		<link rel="stylesheet" href="css/bundle.min.css" />
 		<script src="//cdn.jsdelivr.net/prefixfree/1.0.7/prefixfree.dynamic-dom.min.js"></script>
 		<!--[if lt IE 9]>
 		<script src="//cdn.jsdelivr.net/css3-mediaqueries/0.1/css3-mediaqueries.min.js"></script>
@@ -21,69 +21,82 @@
 				<a class="navLink" href="#mainNav">Menu</a>
 			</header>
 			<article>
-				<h1>early.js&#160;&#8212; подключается первым</h1>
-				<p>
-					Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением покоя, что искусство мое страдает от этого. Ни одного штриха не мог бы я сделать, а никогда не был таким большим художником, как в эти минуты. Когда от милой моей долины поднимается пар и полдневное солнце стоит над непроницаемой чащей темного леса и лишь редкий луч проскальзывает в его святая святых, а я лежу в высокой траве у быстрого ручья и, прильнув к земле, вижу тысячи всевозможных былинок и чувствую, как близок моему сердцу крошечный мирок, что снует между стебельками, наблюдаю эти неисчислимые, непостижимые разновидности червяков и мошек и чувствую близость всемогущего, создавшего нас по своему подобию, веяние вселюбящего, судившего нам парить в вечном блаженстве, когда взор мой туманится и все вокруг меня и небо надо мной запечатлены в моей душе, точно образ возлюбленной, - тогда, дорогой друг, меня часто томит мысль: "Ах! Как бы выразить, как бы вдохнуть в рисунок то, что так полно, так трепетно живет во мне, запечатлеть отражение моей души, как душа моя - отражение предвечного бога!" Друг
-				</p>
+				<h1>early.js&#160;&#8212; a JS bundle to be included first</h1>
+				<h2>Purpose</h2>
+				<p>This bunch of third&#8210;party JS libraries is meant to be included first in your HTML markup and helps to:</p>
+				<ul>
+					<li>detect user device,</li>
+					<li>detect browser capabilities,</li>
+					<li>conditionally load other JS scripts,</li>
+					<li>add user device and browser info to your stats.</li>
+				</ul>
+				<h2>Contents</h2>
+				<p>The following third-party library are included in the bundle:</p>
+				<ul>
+					<li><a href="https://github.com/Modernizr/Modernizr">Modernizr</a> — a JavaScript library that detects HTML5 and CSS3 features in the user’s browser (cssanimations, generatedcontent, cssgradients, csstransforms, csstransforms3d, csstransitions, hashchange, audio, video, svg, touch, shiv, mq, cssclasses, prefixed, teststyles, testprop, testallprops, prefixes, domprefixes, load)</li>
+					<li><a href="https://github.com/barisaydinoglu/Detectizr">Detectizr</a> — a Modernizr extension to detect device, device model, screen size, operating system, and browser details</li>
+					<li><a href="https://github.com/SlexAxton/yepnope.js">yepnope.js</a> — an Asynchronous Conditional Resource Loader</li>
+					<li><a href="http://dean.edwards.name/weblog/2005/10/add-event/">addEvent()</a> — a cross-browser addEvent solution</li>
+					<li><a href="https://github.com/ded/domready">domready</a> — lets you know when the DOM is ready</li>
+					<li><a href="http://detectmobilebrowser.com">Detect Mobile Browsers</a> — open source mobile phone detection (returns true or false instead of redirection)</li>
+				</ul>
+				<p>The bundle initialises the following variables:</p>
+				<pre class="prettyprint"><code class="language-plain">var earlyDeviceType	String	[&quot;tv&quot;, &quot;tablet&quot;, &quot;mobile&quot;, &quot;desktop&quot;]
+var earlyDeviceModel	String	[&quot;smartTv&quot;, &quot;gameConsole&quot;, &quot;ipad&quot;, &quot;android&quot;, &quot;kindle&quot;, &quot;blackberry&quot;, &quot;crawler&quot;]
+var earlyDeviceOrientation	String	[&quot;portrait&quot;, &quot;landscape&quot;]
+var earlyBrowser	String	[&quot;chrome&quot;, &quot;firefox&quot;, &quot;ie&quot;, &quot;iron&quot;, &quot;konqueror&quot;, &quot;opera&quot;, &quot;safari&quot;]
+var earlyBrowserVersion	String
+var earlyBrowserEngine	String	[&quot;gecko&quot;, &quot;presto&quot;, &quot;trident&quot;, &quot;webkit&quot;]
+var earlyOs	String	[&quot;ios&quot;, &quot;android&quot;, &quot;blackberry&quot;, &quot;windows&quot;, &quot;mac&quot;, &quot;webtv&quot;, &quot;linux&quot;, &quot;sun&quot;, &quot;irix&quot;, &quot;freebsd&quot;, &quot;bsd&quot;]
+var earlyOsVersion	String	[&quot;ios&quot;, &quot;8&quot;, &quot;8.1&quot;, &quot;8&quot;, &quot;7&quot;, &quot;vista&quot;, &quot;xp&quot;, &quot;2k&quot;, &quot;nt&quot;, &quot;98&quot;, &quot;95&quot;, &quot;68k&quot;, &quot;ppc&quot;, &quot;os x&quot;]
+var earlyFnGetYyyymmdd	String	&quot;YYYY-MM-DD&quot;
+var earlyIsMobileBrowser	Integer	[1:!1]
+var earlyDocumentReferrer	String
+var earlyWindowLocation	String
+var earlySelfLocationHost	String
+var earlyDevicePixelRatio	Number
+var earlyDeviceWidth	Number
+var earlyIsRetina	Integer
+var earlyHasCssgradients	Integer	[1:&quot;&quot;]
+var earlyHasTouch	Integer	[1:&quot;&quot;]
+var earlyDeviceHeight	Number
+var earlyDocumentTitle	String</code></pre>
+				<p><a href="https://github.com/englishextra/early.js/blob/master/js/early.js">See the full code on GitHub</a></p>
+				<h2>Usage</h2>
+				<p>This should be included before loading jQuery, its pluguins, or any other JS library.</p>
 				<div>
-<pre class="prettyprint"><code class="language-html">&lt;script&gt;
-&quot;undefined&quot; !== typeof window.jQuery && $(document).ready(function () {
-	var b = document.getElementById(&quot;load_quote&quot;) || &quot;&quot;;
-	b && (function () {
-			var url = &quot;http://shimansky.biz/scripts/random_quote/?code=JSON?jsoncallback=?&quot;;
-			$.getJSON(url, {})
-			.done(function (data) {
-				var options,
-				index,
-				option,
-				c,
-				d,
-				f;
-				options = data.random_quote;
-				for (index = 0; index &lt; options.length; ++index) {
-					option = options[index];
-					c = option.quote;
-					d = option.author;
-					f = option.about;
-				}
-				c && b.appendChild(document.createTextNode(c));
-				d && b.appendChild(document.createElement(&quot;br&quot;)),
-				b.appendChild(document.createTextNode(&quot;\240\240\240\240\240\u2014 &quot; + d));
-				f && b.appendChild(document.createTextNode(&quot; on &quot; + f));
-			});
-	}
-	(b));
-});
+					<pre class="prettyprint"><code class="language-html">&lt;script src=&quot;js/early.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+var deferredJS = function () {
+	yepnope.injectJs(&quot;//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js&quot;, function () {
+		(&quot;undefined&quot; !== typeof earlyIsMobileBrowser &amp;&amp; earlyIsMobileBrowser) || yepnope.injectJs(&quot;http://pastebin.com/raw.php?i=dhjs0YeJ&quot;, function () {
+			(function (b, a) {
+				b &amp;&amp; a &amp;&amp; a.parallax()
+			})($.fn.parallax || &quot;&quot;, $(&quot;#scene1&quot;) || &quot;&quot;);
+		}, {
+			charset : &quot;utf-8&quot;
+		}, 5E3);
+	}, {
+		charset : &quot;utf-8&quot;
+	}, 5E3);
+};
+window.addEventListener ? window.addEventListener(&quot;load&quot;, deferredJS, !1) : window.attachEvent ? window.attachEvent(&quot;onload&quot;, deferredJS) : window.onload = deferredJS;
 &lt;/script&gt;</code></pre>
 				</div>
-				<h2>This the second level headline</h2>
-				<p>
-					Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением покоя, что искусство мое страдает от этого. Ни одного штриха не мог бы я сделать, а никогда не был таким большим художником, как в эти минуты. Когда от милой моей долины поднимается пар и полдневное солнце стоит над непроницаемой чащей темного леса и лишь редкий луч проскальзывает в его святая святых, а я лежу в высокой траве у быстрого ручья и, прильнув к земле, вижу тысячи всевозможных былинок и чувствую, как близок моему сердцу крошечный мирок, что снует между стебельками, наблюдаю эти неисчислимые, непостижимые разновидности червяков и мошек и чувствую близость всемогущего, создавшего нас по своему подобию, веяние вселюбящего, судившего нам парить в вечном блаженстве, когда взор мой туманится и все вокруг меня и небо надо мной запечатлены в моей душе, точно образ возлюбленной, - тогда, дорогой друг, меня часто томит мысль: "Ах! Как бы выразить, как бы вдохнуть в рисунок то, что так полно, так трепетно живет во мне, запечатлеть отражение моей души, как душа моя - отражение предвечного бога!" Друг
-				</p>
-				<h3>This is the third level headline</h3>
-				<p>
-					Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением покоя, что искусство мое страдает от этого. Ни одного штриха не мог бы я сделать, а никогда не был таким большим художником, как в эти минуты. Когда от милой моей долины поднимается пар и полдневное солнце стоит над непроницаемой чащей темного леса и лишь редкий луч проскальзывает в его святая святых, а я лежу в высокой траве у быстрого ручья и, прильнув к земле, вижу тысячи всевозможных былинок и чувствую, как близок моему сердцу крошечный мирок, что снует между стебельками, наблюдаю эти неисчислимые, непостижимые разновидности червяков и мошек и чувствую близость всемогущего, создавшего нас по своему подобию, веяние вселюбящего, судившего нам парить в вечном блаженстве, когда взор мой туманится и все вокруг меня и небо надо мной запечатлены в моей душе, точно образ возлюбленной, - тогда, дорогой друг, меня часто томит мысль: "Ах! Как бы выразить, как бы вдохнуть в рисунок то, что так полно, так трепетно живет во мне, запечатлеть отражение моей души, как душа моя - отражение предвечного бога!" Друг
-				</p>
 			</article>
+			<footer>
+				<p>&#169;&#160;<a href="https://github.com/englishextra">github.com/englishextra</a>, 2014</p>
+			</footer>
 			<nav id="mainNav" class="mainNav">
 				<ul>
 					<li>
-						<a href="#">Item One</a>
+						<a href="http://shimansky.biz/">Production Example</a>
 					</li>
 					<li>
-						<a href="#">Item Two</a>
+						<a href="https://github.com/englishextra/early.js/archive/master.zip">Download ZIP</a>
 					</li>
 					<li>
-						<a href="#">Item Three</a>
-					</li>
-					<li>
-						<a href="#">Item Four</a>
-					</li>
-					<li>
-						<a href="#">Item Five</a>
-					</li>
-					<li>
-						<a href="#">Item Six</a>
+						<a href="https://github.com/englishextra/early.js">Project on GitHub</a>
 					</li>
 					<li>
 						<a href="#top" class="topLink">Top</a>
@@ -91,9 +104,10 @@
 				</ul>
 			</nav>
 		</div>
-		<script src="/libs/early.js/js/early.min.js"></script>
+		<script src="js/early.min.js"></script>
 		<script>
 			("undefined"!==typeof sbizIsMobileBrowser&&sbizIsMobileBrowser)||function(a){"undefined"!==typeof a.addEvent&&addEvent(a,"load",function(){yepnope.injectCss("/libs/google-code-prettify/shimansky.biz/tomorrow-night-eighties.fixed.min.css",function(){yepnope.injectJs("//cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.min.js",function(){"undefined"!==typeof a.prettyPrint&&prettyPrint()},{charset:"utf-8"},5E3)},{media:"all"},5E3)}())}(window);
 		</script>
+		<!--#include virtual="/virtual/counters.html" -->
 	</body>
 </html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Simple Responsive Navigation - CodePen</title>
+		<meta name="viewport" content="width=device-width, initial-scale =1.0, user-scalable= no">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,700italic,400italic&subset=latin,cyrillic" />
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400italic,700,700italic&subset=latin,cyrillic" />
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.min.css" />
+		<link rel="stylesheet" href="/libs/early.js/css/bundle.min.css" />
+		<script src="//cdn.jsdelivr.net/prefixfree/1.0.7/prefixfree.dynamic-dom.min.js"></script>
+		<!--[if lt IE 9]>
+		<script src="//cdn.jsdelivr.net/css3-mediaqueries/0.1/css3-mediaqueries.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<!-- <h1>early.js&#160;&#8212; запускает остальные скрипты</h1> -->
+				<a class="navLink" href="#mainNav">Menu</a>
+			</header>
+			<article>
+				<h1>early.js&#160;&#8212; подключается первым</h1>
+				<p>
+					Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением покоя, что искусство мое страдает от этого. Ни одного штриха не мог бы я сделать, а никогда не был таким большим художником, как в эти минуты. Когда от милой моей долины поднимается пар и полдневное солнце стоит над непроницаемой чащей темного леса и лишь редкий луч проскальзывает в его святая святых, а я лежу в высокой траве у быстрого ручья и, прильнув к земле, вижу тысячи всевозможных былинок и чувствую, как близок моему сердцу крошечный мирок, что снует между стебельками, наблюдаю эти неисчислимые, непостижимые разновидности червяков и мошек и чувствую близость всемогущего, создавшего нас по своему подобию, веяние вселюбящего, судившего нам парить в вечном блаженстве, когда взор мой туманится и все вокруг меня и небо надо мной запечатлены в моей душе, точно образ возлюбленной, - тогда, дорогой друг, меня часто томит мысль: "Ах! Как бы выразить, как бы вдохнуть в рисунок то, что так полно, так трепетно живет во мне, запечатлеть отражение моей души, как душа моя - отражение предвечного бога!" Друг
+				</p>
+				<div>
+<pre class="prettyprint"><code class="language-html">&lt;script&gt;
+&quot;undefined&quot; !== typeof window.jQuery && $(document).ready(function () {
+	var b = document.getElementById(&quot;load_quote&quot;) || &quot;&quot;;
+	b && (function () {
+			var url = &quot;http://shimansky.biz/scripts/random_quote/?code=JSON?jsoncallback=?&quot;;
+			$.getJSON(url, {})
+			.done(function (data) {
+				var options,
+				index,
+				option,
+				c,
+				d,
+				f;
+				options = data.random_quote;
+				for (index = 0; index &lt; options.length; ++index) {
+					option = options[index];
+					c = option.quote;
+					d = option.author;
+					f = option.about;
+				}
+				c && b.appendChild(document.createTextNode(c));
+				d && b.appendChild(document.createElement(&quot;br&quot;)),
+				b.appendChild(document.createTextNode(&quot;\240\240\240\240\240\u2014 &quot; + d));
+				f && b.appendChild(document.createTextNode(&quot; on &quot; + f));
+			});
+	}
+	(b));
+});
+&lt;/script&gt;</code></pre>
+				</div>
+				<h2>This the second level headline</h2>
+				<p>
+					Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением покоя, что искусство мое страдает от этого. Ни одного штриха не мог бы я сделать, а никогда не был таким большим художником, как в эти минуты. Когда от милой моей долины поднимается пар и полдневное солнце стоит над непроницаемой чащей темного леса и лишь редкий луч проскальзывает в его святая святых, а я лежу в высокой траве у быстрого ручья и, прильнув к земле, вижу тысячи всевозможных былинок и чувствую, как близок моему сердцу крошечный мирок, что снует между стебельками, наблюдаю эти неисчислимые, непостижимые разновидности червяков и мошек и чувствую близость всемогущего, создавшего нас по своему подобию, веяние вселюбящего, судившего нам парить в вечном блаженстве, когда взор мой туманится и все вокруг меня и небо надо мной запечатлены в моей душе, точно образ возлюбленной, - тогда, дорогой друг, меня часто томит мысль: "Ах! Как бы выразить, как бы вдохнуть в рисунок то, что так полно, так трепетно живет во мне, запечатлеть отражение моей души, как душа моя - отражение предвечного бога!" Друг
+				</p>
+				<h3>This is the third level headline</h3>
+				<p>
+					Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением покоя, что искусство мое страдает от этого. Ни одного штриха не мог бы я сделать, а никогда не был таким большим художником, как в эти минуты. Когда от милой моей долины поднимается пар и полдневное солнце стоит над непроницаемой чащей темного леса и лишь редкий луч проскальзывает в его святая святых, а я лежу в высокой траве у быстрого ручья и, прильнув к земле, вижу тысячи всевозможных былинок и чувствую, как близок моему сердцу крошечный мирок, что снует между стебельками, наблюдаю эти неисчислимые, непостижимые разновидности червяков и мошек и чувствую близость всемогущего, создавшего нас по своему подобию, веяние вселюбящего, судившего нам парить в вечном блаженстве, когда взор мой туманится и все вокруг меня и небо надо мной запечатлены в моей душе, точно образ возлюбленной, - тогда, дорогой друг, меня часто томит мысль: "Ах! Как бы выразить, как бы вдохнуть в рисунок то, что так полно, так трепетно живет во мне, запечатлеть отражение моей души, как душа моя - отражение предвечного бога!" Друг
+				</p>
+			</article>
+			<nav id="mainNav" class="mainNav">
+				<ul>
+					<li>
+						<a href="#">Item One</a>
+					</li>
+					<li>
+						<a href="#">Item Two</a>
+					</li>
+					<li>
+						<a href="#">Item Three</a>
+					</li>
+					<li>
+						<a href="#">Item Four</a>
+					</li>
+					<li>
+						<a href="#">Item Five</a>
+					</li>
+					<li>
+						<a href="#">Item Six</a>
+					</li>
+					<li>
+						<a href="#top" class="topLink">Top</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<script src="/libs/early.js/js/early.min.js"></script>
+		<script>
+			("undefined"!==typeof sbizIsMobileBrowser&&sbizIsMobileBrowser)||function(a){"undefined"!==typeof a.addEvent&&addEvent(a,"load",function(){yepnope.injectCss("/libs/google-code-prettify/shimansky.biz/tomorrow-night-eighties.fixed.min.css",function(){yepnope.injectJs("//cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.min.js",function(){"undefined"!==typeof a.prettyPrint&&prettyPrint()},{charset:"utf-8"},5E3)},{media:"all"},5E3)}())}(window);
+		</script>
+	</body>
+</html>

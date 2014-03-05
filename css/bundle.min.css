@@ -162,7 +162,7 @@ pre {
 pre {
 	font-family: "Ubuntu Mono", Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
 	white-space: pre;
-	white-space: pre-wrap;
+	/* white-space: pre-wrap; */
 	word-wrap: inherit;
 	overflow: -moz-scrollbars-horizontal;
 	overflow-x: auto;

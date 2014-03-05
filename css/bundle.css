@@ -95,6 +95,10 @@ a:focus,
 a:active {
 	color: #C71939;
 }
+header {
+	margin-bottom: 32px;
+	padding-top: 0;
+}
 header h1 {
 	font-size: 36px;
 	line-height: 37px;
@@ -118,14 +122,14 @@ article h1 {
 	margin-bottom: 40px;
 }
 article h2 {
-	font-size: 24px;
-	line-height: 25px;
+	font-size: 22px;
+	line-height: 23px;
 	font-weight: 600;
 	margin-bottom: 5px;
 }
 article h3 {
-	font-size: 24px;
-	line-height: 25px;
+	font-size: 20px;
+	line-height: 21px;
 	font-weight: 600;
 	font-variant: small-caps;
 	text-decoration: underline;
@@ -149,20 +153,9 @@ footer p {
 footer p a {
 	color: inherit;
 }
-/**
- * fixes to tomorrow-night-eighties.fixed.min.css
- */
-/* code,
-pre {
-	color: #FFF;
-	font-family: Ubuntu Mono, monospace, serif;
-	font-weight: 400;
-	padding: 11px 16px;
-} */
 pre {
 	font-family: "Ubuntu Mono", Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
 	white-space: pre;
-	/* white-space: pre-wrap; */
 	word-wrap: inherit;
 	overflow: -moz-scrollbars-horizontal;
 	overflow-x: auto;
@@ -259,11 +252,13 @@ caption {
 	padding: 0;
 }
 .mainNav a {
-	border-bottom: 1px solid #E6E7E9;
+	border-bottom: 0px solid #E6E7E9;
 	color: #FFF;
 	cursor: pointer;
 	display: block;
 	text-decoration: none;
+		font-size: 16px;
+		line-height: 24px;
 	padding: 11px 16px;
 }
 .mainNav .topLink {
@@ -288,17 +283,15 @@ caption {
 .mainNav a:active,
 .navLink:active,
 .mainNav .topLink:active {
-	background: #0074d9;
+	background: #C71939;
 	color: #FFF;
 }
 .mainNav a:active {
-	border-bottom: 1px solid #0074d9;
+	border-bottom: 0px solid #C71939;
 }
-@media screen and (min-width: 640px) {
-
-}
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 720px) {
 	.container {
+		max-width: 720px;
 		position: relative;
 	}
 	header {
@@ -333,18 +326,13 @@ caption {
 	.mainNav a:focus,
 	.navLink:hover,
 	.navLink:focus {
-		background: #FFF;
-		color: #0074d9;
+		background: #E6E7E9;
+		color: inherit;
 	}
 	.mainNav a:active,
 	.navLink:active,
 	.mainNav .topLink:active {
-		background: #0074D9;
+		background: #C71939;
 		color: #FFF;
-	}
-}
-@media screen and (min-width: 1400px) {
-	.container {
-		max-width: 800px;
 	}
 }

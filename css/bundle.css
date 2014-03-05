@@ -1,4 +1,7 @@
-/*! normalize.css v3.0.0 | MIT License | git.io/normalize */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+/*!
+ * normalize.css v3.0.0 | MIT License | git.io/normalize
+ */
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 /*!
  * tomorrow-night-eighties.fixed.min.css
  */
@@ -79,7 +82,7 @@ body {
 	font-size: 16px;
 	line-height: 1.5;
 	font-weight: 400;
-	background-color: #fff;
+	background-color: #FFF;
 }
 a {
 	color: #2483AA;
@@ -105,8 +108,6 @@ article h2,
 article h3,
 pre {
 	margin-top: 24px;
-}
-pre {
 	margin-bottom: 40px;
 }
 article h1 {
@@ -246,93 +247,60 @@ caption {
 }
 .navLink {
 	background: #3C3D3F;
-	color: #fff;
+	color: #FFF;
 	display: block;
-	padding: 1em;
+	padding: 11px 16px;
 	text-align: center;
 	text-decoration: none;
 }
-/*Navigation*/
 .mainNav ul {
 	background: #3C3D3F;
 	list-style: none;
 	padding: 0;
 }
 .mainNav a {
-	border-bottom: 1px solid #ddd;
-	color: #fff;
+	border-bottom: 1px solid #E6E7E9;
+	color: #FFF;
 	cursor: pointer;
 	display: block;
 	text-decoration: none;
-	/* text-transform: uppercase; */
-	padding: 0.75em 1em;
+	padding: 11px 16px;
 }
 .mainNav .topLink {
-	background-color: #ddd;
+	background-color: #E6E7E9;
 	border-bottom: none;
-	color: #222;
+	color: inherit;
 	text-align: center;
-	font-weight: 700;
+	font-weight: 600;
 }
 .mainNav a:hover,
 .mainNav a:focus,
 .navLink:hover,
 .navLink:focus {
-	background: #ddd;
-	color: #222;
+	background: #E6E7E9;
+	color: inherit;
 }
 .mainNav .topLink:hover,
 .mainNav .topLink:focus {
 	background-color: #3C3D3F;
-	color: #fff;
+	color: #FFF;
 }
 .mainNav a:active,
 .navLink:active,
 .mainNav .topLink:active {
 	background: #0074d9;
-	color: #fff;
+	color: #FFF;
 }
 .mainNav a:active {
 	border-bottom: 1px solid #0074d9;
 }
 @media screen and (min-width: 640px) {
-	/* .container {
-		max-width: 34.107em;
-	}
-	header h1 {
-		font-size: 1.758em;
-	}
-	article h1 {
-		font-size: 1.5em;
-	}
-	article h2 {
-		font-size: 1.406em;
-	}
-	article h3 {
-		font-size: 1.2em;
-	} */
+
 }
 @media screen and (min-width: 800px) {
 	.container {
-		/* max-width: 42.634em; */
 		position: relative;
 	}
-	/* header h1 {
-		font-size: 1.875em;
-	}
-	article h1 {
-		font-size: 1.758em;
-	}
-	article h2 {
-		font-size: 1.5em;
-	}
-	article h3 {
-		font-size: 1.406em;
-	}
-	article p {
-		font-size: 1.2em;
-		line-height: 1.758em;
-	}*/
 	header {
 		margin-bottom: 32px;
 		padding-top: 48px;
@@ -356,47 +324,27 @@ caption {
 	}
 	.mainNav a {
 		border: none;
-		font-size: 1em;
-		line-height: 1.5em;
-		padding: 0.75rem 0.6em;
+		font-size: 16px;
+		line-height: 24px;
+		padding: 11px 16px;
 		text-align: center;
 	}
 	.mainNav a:hover,
 	.mainNav a:focus,
 	.navLink:hover,
 	.navLink:focus {
-		background: #fff;
+		background: #FFF;
 		color: #0074d9;
 	}
 	.mainNav a:active,
 	.navLink:active,
 	.mainNav .topLink:active {
 		background: #0074D9;
-		color: #fff;
+		color: #FFF;
 	}
 }
 @media screen and (min-width: 1400px) {
 	.container {
 		max-width: 800px;
-	}
-	header {
-		/* margin-bottom: 3em;
-		padding-top: 6em; */
-	}
-	header h1 {
-		/* font-size: 2.197em; */
-	}
-	article h1 {
-		/* font-size: 1.875em; */
-	}
-	article h2 {
-		/* font-size: 1.758em; */
-	}
-	article h3 {
-		/* font-size: 1.5em; */
-	}
-	article p {
-		/* font-size: 1em;
-		line-height: 1.5; */
 	}
 }

@@ -265,6 +265,9 @@ caption {
 	cursor: pointer;
 	padding: 11px 16px;
 }
+.topnav .toplink {
+	display: block;
+}
 .menulink:hover,
 .menulink:focus,
 .menulink:active,

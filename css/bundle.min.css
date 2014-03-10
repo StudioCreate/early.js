@@ -75,7 +75,7 @@ table.respond {
 }
 pre.prettyprint {
 	background: #404445 !important;
-	border: 1px solid transparent !important;
+	border: 0px solid transparent !important;
 }
 a {
 	color: #2483AA;

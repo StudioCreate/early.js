@@ -84,7 +84,9 @@ other JS library.
     window.addEventListener ? window.addEventListener("load", deferredJS, !1) : window.attachEvent ? window.attachEvent("onload", deferredJS) : window.onload = deferredJS;
     </script>
 
-© [github.com/englishextra][], 2014
+## Copyright
+
+Copyright (c) 2006-2014 Serguei Shimansky, <englishextra@yandex.ru>
 
   [Modernizr]: https://github.com/Modernizr/Modernizr
   [Detectizr]: https://github.com/barisaydinoglu/Detectizr

@@ -43,8 +43,8 @@
 				-webkit-tap-highlight-color: rgba(0,0,0,0);
 			}
 			a:hover,
-						a:active,
-						a:focus {
+				a:active,
+				a:focus {
 				outline: none;
 				-webkit-tap-highlight-color: rgba(0,0,0,0);
 			}
@@ -59,7 +59,8 @@
 			p:last-child {
 				margin-bottom: 0;
 			}
-			strong, .bolder {
+			strong,
+			.bolder {
 				font-weight: 600;
 			}
 			*,*:after,*::before {
@@ -78,18 +79,10 @@
 				background: #404445 !important;
 				border: 0px solid transparent !important;
 			}
-			a {
-				color: #2483AA;
-			}
-			a:hover,
-						a:focus,
-						a:active {
-				color: #C71939;
-			}
 			.header {
 				color: #FFF;
 				background: #5494A4;
-				margin-bottom: 32px;
+				margin: 0 auto 32px auto;
 				padding: 0 0 24px 0;
 			}
 			.header h1 {
@@ -102,16 +95,19 @@
 			}
 			.footer {
 				text-align: center;
-				margin: 24px 0;
+				margin: 24px auto;
 			}
 			.footer p a {
 				color: inherit;
 			}
 			.container {
-				width: 92%;
 				height: 100%;
 				position: relative;
 				margin: 0 auto;
+				padding: 0;
+			}
+			.col {
+				padding: 0 24px;
 			}
 			.menulink {
 				display: block;
@@ -124,6 +120,11 @@
 				background: #404445;
 				padding: 11px 16px;
 			}
+			/*.topnav {
+				display: block;
+				width: 100%;
+				margin: 0 auto;
+			}		*/
 			.topnav ul {
 				list-style: none;
 				text-align: center;
@@ -152,11 +153,11 @@
 				display: block;
 			}
 			.menulink:hover,
-						.menulink:focus,
-						.menulink:active,
-						.topnav ul li:hover,
-						.topnav ul li:focus,
-						.topnav ul li:active {
+			.menulink:focus,
+			.menulink:active,
+			.topnav ul li:hover,
+			.topnav ul li:focus,
+			.topnav ul li:active {
 				color: inherit;
 				background-color: #953C56;
 			}
@@ -166,8 +167,11 @@
 					padding-top: 48px;
 				}
 				.container {
-					max-width: 720px;
+					max-width: 760px;
 					position: relative;
+				}
+				.col {
+					padding: 0;
 				}
 				.menulink,
 					.topnav .toplink {
@@ -315,9 +319,9 @@
 							<pre class="prettyprint"><code class="language-html">&lt;script src=&quot;js/early.min.js&quot;&gt;&lt;/script&gt;<br />&lt;script&gt;<br />var deferredJS = function () {<br />&#160;&#160;&#160;&#160;yepnope.injectJs(&quot;//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js&quot;, function () {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(&quot;undefined&quot; !== typeof earlyIsMobileBrowser &amp;&amp; earlyIsMobileBrowser) || yepnope.injectJs(&quot;http://pastebin.com/raw.php?i=dhjs0YeJ&quot;, function () {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(function (b, a) {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;b &amp;&amp; a &amp;&amp; a.parallax()<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;})($.fn.parallax || &quot;&quot;, $(&quot;#scene1&quot;) || &quot;&quot;);<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}, {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;charset : &quot;utf-8&quot;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}, 5E3);<br />&#160;&#160;&#160;&#160;}, {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;charset : &quot;utf-8&quot;<br />&#160;&#160;&#160;&#160;}, 5E3);<br />};<br />window.addEventListener ? window.addEventListener(&quot;load&quot;, deferredJS, !1) : window.attachEvent ? window.attachEvent(&quot;onload&quot;, deferredJS) : window.onload = deferredJS;<br />&lt;/script&gt;</code></pre>
 						</div>
 					</div>
-					<div class="footer" role="contentinfo">
-						<p><span class="smaller">&#169;&#160;<a href="https://github.com/englishextra/early.js">github.com/englishextra</a>, 2014</span></p>
-					</div>
+				</div>
+				<div class="footer" role="contentinfo">
+					<p><span class="smaller">&#169;&#160;<a href="https://github.com/englishextra/early.js">github.com/englishextra</a>, 2014</span></p>
 				</div>
 				<div class="topnav" id="topnav">
 					<ul>

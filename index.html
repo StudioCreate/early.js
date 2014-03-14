@@ -1,14 +1,275 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale =1.0, user-scalable= no">
+		<meta name="viewport" content="width=device-width, initial-scale =1.0, user-scalable= no" />
 		<title>early.js&#160;&#8212; a&#160;JS bundle to&#160; be included first</title>
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic&amp;subset=latin,cyrillic" />
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400italic,700,700italic&amp;subset=latin,cyrillic" />
-		<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.min.css" /> -->
-		<link rel="stylesheet" href="css/bundle.min.css" />
-		<!-- <script src="//cdn.jsdelivr.net/prefixfree/1.0.7/prefixfree.dynamic-dom.min.js"></script> -->
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic|Ubuntu+Mono:400,400italic,700,700italic|Voces&amp;subset=latin,cyrillic" />
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/16pixels/0.1/16pixels.min.css" />
+		<style>
+			/*!
+			 * custom
+			 */
+			html,
+			body {
+				height: 100%;
+			}
+			body {
+				width: 100%;
+				position: relative;
+				font-size: 16px;
+				font-family: Open Sans, sans-serif;
+				font-weight: 400;
+				line-height: 1.5;
+				color: #363A3B;
+				background: #FFF;
+				backgound-size: 100% 100%;
+				-webkit-touch-callout: none;
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+				-webkit-text-size-adjust: none;
+				user-select: none;
+				-o-user-select: none;
+				-khtml-user-select: none;
+				-webkit-user-select: none;
+				overflow-x: hidden;
+				margin: 0;
+				padding: 0;
+			}
+			a {
+				color: inherit;
+				text-decoration: none;
+				outline: none;
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			a:hover,
+						a:active,
+						a:focus {
+				outline: none;
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			img {
+				border: 0;
+				-ms-interpolation-mode: bicubic;
+				vertical-align: bottom;
+			}
+			p:first-child {
+				margin-top: 0;
+			}
+			p:last-child {
+				margin-bottom: 0;
+			}
+			strong, .bolder {
+				font-weight: 600;
+			}
+			*,*:after,*::before {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			/* * {
+				-webkit-font-smoothing: antialiased;
+				font-smoothing: antialiased;
+			} */
+			table.respond {
+				width: auto;
+			}
+			pre.prettyprint {
+				background: #404445 !important;
+				border: 0px solid transparent !important;
+			}
+			a {
+				color: #2483AA;
+			}
+			a:hover,
+						a:focus,
+						a:active {
+				color: #C71939;
+			}
+			.header {
+				color: #FFF;
+				background: #5494A4;
+				margin-bottom: 32px;
+				padding: 0 0 24px 0;
+			}
+			.header h1 {
+				font-size: 24px;
+				line-height: 25px;
+				font-weight: 600;
+				text-align: center;
+				margin: 24px 0 0 0;
+				padding: 0 16px;
+			}
+			.footer {
+				text-align: center;
+				margin: 24px 0;
+			}
+			.footer p a {
+				color: inherit;
+			}
+			.container {
+				width: 92%;
+				height: 100%;
+				position: relative;
+				margin: 0 auto;
+			}
+			.menulink {
+				display: block;
+				font-size: 16px;
+				line-height: 24px;
+				font-weight: 400;
+				text-align: center;
+				text-decoration: none;
+				color: #FFF;
+				background: #404445;
+				padding: 11px 16px;
+			}
+			.topnav ul {
+				list-style: none;
+				text-align: center;
+				color: #FFF;
+				background: #404445;
+				padding: 0;
+				margin: 0;
+			}
+			.topnav ul li {
+				background: #404445;
+				padding: 0;
+				margin: 0;
+			}
+			.topnav a {
+				display: inline-block;
+				font-size: 16px;
+				line-height: 24px;
+				font-weight: 400;
+				text-decoration: none;
+				color: inherit;
+				border-bottom: none;
+				cursor: pointer;
+				padding: 11px 16px;
+			}
+			.topnav .toplink {
+				display: block;
+			}
+			.menulink:hover,
+						.menulink:focus,
+						.menulink:active,
+						.topnav ul li:hover,
+						.topnav ul li:focus,
+						.topnav ul li:active {
+				color: inherit;
+				background-color: #953C56;
+			}
+			@media screen and (min-width: 767px) {
+				.header {
+					margin-bottom: 32px;
+					padding-top: 48px;
+				}
+				.container {
+					max-width: 720px;
+					position: relative;
+				}
+				.menulink,
+					.topnav .toplink {
+					display: none;
+				}
+				.topnav {
+					width: 100%;
+					position: absolute;
+					top: 0;
+				}
+				.topnav li {
+					display: inline-block;
+				}
+			}
+			/*!
+			 * tomorrow-night-eighties.fixed.min.css
+			 */
+			.pln {
+				color: #CCC;
+			}
+			@media screen {
+				.str {
+					color: #99CC99;
+				}
+				.kwd {
+					color: #CC99CC;
+				}
+				.com {
+					color: #999999;
+				}
+				.typ {
+					color: #6699CC;
+				}
+				.lit {
+					color: #F99157;
+				}
+				.pun {
+					color: #CCC;
+				}
+				.opn {
+					color: #CCC;
+				}
+				.clo {
+					color: #CCC;
+				}
+				.tag {
+					color: #F2777A;
+				}
+				.atn {
+					color: #F99157;
+				}
+				.atv {
+					color: #66CCCC;
+				}
+				.dec {
+					color: #F99157;
+				}
+				.var {
+					color: #F2777A;
+				}
+				.fun {
+					color: #6699CC;
+				}
+			}
+			@media print, projection {
+				.str {
+					color: #006600;
+				}
+				.kwd {
+					color: #006;
+					font-weight: bold;
+				}
+				.com {
+					color: #600;
+					font-style: italic;
+				}
+				.typ {
+					color: #404;
+					font-weight: bold;
+				}
+				.lit {
+					color: #004444;
+				}
+				.pun, .opn, .clo {
+					color: #444400;
+				}
+				.tag {
+					color: #006;
+					font-weight: bold;
+				}
+				.atn {
+					color: #440044;
+				}
+				.atv {
+					color: #006600;
+				}
+			}
+			ol.linenums {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+		</style>
 		<script src="//cdn.jsdelivr.net/prefixfree/1.0.7/prefixfree.min.js"></script>
 		<!--[if lt IE 9]>
 		<script src="//cdn.jsdelivr.net/css3-mediaqueries/0.1/css3-mediaqueries.min.js"></script>
@@ -16,47 +277,49 @@
 		<![endif]-->
 	</head>
 	<body>
+	<body>
 		<div id="page">
-			<div class="container">
-				<header>
+			<div class="container" role="main">
+				<div class="header" role="heading">
 					<a class="menulink" href="#topnav">Menu</a>
 					<h1>early.js&#160;&#8212; a&#160;JS bundle to&#160; be included first</h1>
-				</header>
-				<article>
-					<!-- <h1>early.js&#160;&#8212; a JS bundle to be included first</h1> -->
-					<h2>Purpose</h2>
-					<p>This bunch of third&#8210;party JS libraries is meant to be included first in your HTML markup and helps to:</p>
-					<ul>
-						<li>detect user device,</li>
-						<li>detect browser capabilities,</li>
-						<li>conditionally load other JS scripts,</li>
-						<li>add user device and browser info to your stats.</li>
-					</ul>
-					<h2>Contents</h2>
-					<p>The following third-party library are included in the bundle:</p>
-					<ul>
-						<li><a href="https://github.com/Modernizr/Modernizr">Modernizr</a> — a JavaScript library that detects HTML5 and CSS3 features in the user’s browser (cssanimations, generatedcontent, cssgradients, csstransforms, csstransforms3d, csstransitions, hashchange, audio, video, svg, touch, shiv, mq, cssclasses, prefixed, teststyles, testprop, testallprops, prefixes, domprefixes, load)</li>
-						<li><a href="https://github.com/barisaydinoglu/Detectizr">Detectizr</a> — a Modernizr extension to detect device, device model, screen size, operating system, and browser details</li>
-						<li><a href="https://github.com/SlexAxton/yepnope.js">yepnope.js</a> — an Asynchronous Conditional Resource Loader</li>
-						<li><a href="http://dean.edwards.name/weblog/2005/10/add-event/">addEvent()</a> — a cross-browser addEvent solution</li>
-						<li><a href="https://github.com/ded/domready">domready</a> — lets you know when the DOM is ready</li>
-						<li><a href="http://detectmobilebrowser.com">Detect Mobile Browsers</a> — open source mobile phone detection (returns true or false instead of redirection)</li>
-					</ul>
-					<p>The bundle initialises the following variables:</p>
-					<div>
-						<pre class="prettyprint"><code class="language-plain">var earlyDeviceType&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;[&quot;tv&quot;, &quot;tablet&quot;, &quot;mobile&quot;, &quot;desktop&quot;]<br />var earlyDeviceModel&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;[&quot;smartTv&quot;, &quot;gameConsole&quot;, &quot;ipad&quot;, &quot;android&quot;, &quot;kindle&quot;, &quot;blackberry&quot;, &quot;crawler&quot;]<br />var earlyDeviceOrientation&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;[&quot;portrait&quot;, &quot;landscape&quot;]<br />var earlyBrowser&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;[&quot;chrome&quot;, &quot;firefox&quot;, &quot;ie&quot;, &quot;iron&quot;, &quot;konqueror&quot;, &quot;opera&quot;, &quot;safari&quot;]<br />var earlyBrowserVersion&#160;&#160;&#160;&#160;String<br />var earlyBrowserEngine&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;[&quot;gecko&quot;, &quot;presto&quot;, &quot;trident&quot;, &quot;webkit&quot;]<br />var earlyOs&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;[&quot;ios&quot;, &quot;android&quot;, &quot;blackberry&quot;, &quot;windows&quot;, &quot;mac&quot;, &quot;webtv&quot;, &quot;linux&quot;, &quot;sun&quot;, &quot;irix&quot;, &quot;freebsd&quot;, &quot;bsd&quot;]<br />var earlyOsVersion&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;[&quot;ios&quot;, &quot;8&quot;, &quot;8.1&quot;, &quot;8&quot;, &quot;7&quot;, &quot;vista&quot;, &quot;xp&quot;, &quot;2k&quot;, &quot;nt&quot;, &quot;98&quot;, &quot;95&quot;, &quot;68k&quot;, &quot;ppc&quot;, &quot;os x&quot;]<br />var earlyFnGetYyyymmdd&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;&quot;YYYY-MM-DD&quot;<br />var earlyIsMobileBrowser&#160;&#160;&#160;&#160;Integer&#160;&#160;&#160;&#160;[1:!1]<br />var earlyDocumentReferrer&#160;&#160;&#160;&#160;String<br />var earlyWindowLocation&#160;&#160;&#160;&#160;String<br />var earlySelfLocationHost&#160;&#160;&#160;&#160;String<br />var earlyDevicePixelRatio&#160;&#160;&#160;&#160;Number<br />var earlyDeviceWidth&#160;&#160;&#160;&#160;Number<br />var earlyIsRetina&#160;&#160;&#160;&#160;Integer&#160;&#160;&#160;&#160;[1:&quot;&quot;]<br />var earlyHasCssgradients&#160;&#160;&#160;&#160;Integer&#160;&#160;&#160;&#160;[1:&quot;&quot;]<br />var earlyHasTouch&#160;&#160;&#160;&#160;Integer&#160;&#160;&#160;&#160;[1:&quot;&quot;]<br />var earlyDeviceHeight&#160;&#160;&#160;&#160;Number<br />var earlyDocumentTitle&#160;&#160;&#160;&#160;String</code></pre>
+				</div>
+				<div class="row">
+					<div class="col span_12 cf">
+						<h2>Purpose</h2>
+						<p>This bunch of third&#8210;party JS libraries is meant to be included first in your HTML markup and helps to:</p>
+						<ul>
+							<li>detect user device,</li>
+							<li>detect browser capabilities,</li>
+							<li>conditionally load other JS scripts,</li>
+							<li>add user device and browser info to your stats.</li>
+						</ul>
+						<h2>Contents</h2>
+						<p>The following third-party library are included in the bundle:</p>
+						<ul>
+							<li><a href="https://github.com/Modernizr/Modernizr">Modernizr</a> — a JavaScript library that detects HTML5 and CSS3 features in the user’s browser (cssanimations, generatedcontent, cssgradients, csstransforms, csstransforms3d, csstransitions, hashchange, audio, video, svg, touch, shiv, mq, cssclasses, prefixed, teststyles, testprop, testallprops, prefixes, domprefixes, load)</li>
+							<li><a href="https://github.com/barisaydinoglu/Detectizr">Detectizr</a> — a Modernizr extension to detect device, device model, screen size, operating system, and browser details</li>
+							<li><a href="https://github.com/SlexAxton/yepnope.js">yepnope.js</a> — an Asynchronous Conditional Resource Loader</li>
+							<li><a href="http://dean.edwards.name/weblog/2005/10/add-event/">addEvent()</a> — a cross-browser addEvent solution</li>
+							<li><a href="https://github.com/ded/domready">domready</a> — lets you know when the DOM is ready</li>
+							<li><a href="http://detectmobilebrowser.com">Detect Mobile Browsers</a> — open source mobile phone detection (returns true or false instead of redirection)</li>
+						</ul>
+						<p>The bundle initialises the following variables:</p>
+						<div>
+							<pre class="prettyprint"><code class="language-plain">var earlyDeviceType&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;[&quot;tv&quot;, &quot;tablet&quot;, &quot;mobile&quot;, &quot;desktop&quot;]<br />var earlyDeviceModel&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;[&quot;smartTv&quot;, &quot;gameConsole&quot;, &quot;ipad&quot;, &quot;android&quot;, &quot;kindle&quot;, &quot;blackberry&quot;, &quot;crawler&quot;]<br />var earlyDeviceOrientation&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;[&quot;portrait&quot;, &quot;landscape&quot;]<br />var earlyBrowser&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;[&quot;chrome&quot;, &quot;firefox&quot;, &quot;ie&quot;, &quot;iron&quot;, &quot;konqueror&quot;, &quot;opera&quot;, &quot;safari&quot;]<br />var earlyBrowserVersion&#160;&#160;&#160;&#160;String<br />var earlyBrowserEngine&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;[&quot;gecko&quot;, &quot;presto&quot;, &quot;trident&quot;, &quot;webkit&quot;]<br />var earlyOs&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;[&quot;ios&quot;, &quot;android&quot;, &quot;blackberry&quot;, &quot;windows&quot;, &quot;mac&quot;, &quot;webtv&quot;, &quot;linux&quot;, &quot;sun&quot;, &quot;irix&quot;, &quot;freebsd&quot;, &quot;bsd&quot;]<br />var earlyOsVersion&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;[&quot;ios&quot;, &quot;8&quot;, &quot;8.1&quot;, &quot;8&quot;, &quot;7&quot;, &quot;vista&quot;, &quot;xp&quot;, &quot;2k&quot;, &quot;nt&quot;, &quot;98&quot;, &quot;95&quot;, &quot;68k&quot;, &quot;ppc&quot;, &quot;os x&quot;]<br />var earlyFnGetYyyymmdd&#160;&#160;&#160;&#160;String&#160;&#160;&#160;&#160;&quot;YYYY-MM-DD&quot;<br />var earlyIsMobileBrowser&#160;&#160;&#160;&#160;Integer&#160;&#160;&#160;&#160;[1:!1]<br />var earlyDocumentReferrer&#160;&#160;&#160;&#160;String<br />var earlyWindowLocation&#160;&#160;&#160;&#160;String<br />var earlySelfLocationHost&#160;&#160;&#160;&#160;String<br />var earlyDevicePixelRatio&#160;&#160;&#160;&#160;Number<br />var earlyDeviceWidth&#160;&#160;&#160;&#160;Number<br />var earlyIsRetina&#160;&#160;&#160;&#160;Integer&#160;&#160;&#160;&#160;[1:&quot;&quot;]<br />var earlyHasCssgradients&#160;&#160;&#160;&#160;Integer&#160;&#160;&#160;&#160;[1:&quot;&quot;]<br />var earlyHasTouch&#160;&#160;&#160;&#160;Integer&#160;&#160;&#160;&#160;[1:&quot;&quot;]<br />var earlyDeviceHeight&#160;&#160;&#160;&#160;Number<br />var earlyDocumentTitle&#160;&#160;&#160;&#160;String</code></pre>
+						</div>
+						<p><a href="https://github.com/englishextra/early.js/blob/master/js/early.js">See the full code on GitHub</a></p>
+						<h2>Usage</h2>
+						<p>This should be included before loading jQuery, its pluguins, or any other JS library.</p>
+						<div>
+							<pre class="prettyprint"><code class="language-html">&lt;script src=&quot;js/early.min.js&quot;&gt;&lt;/script&gt;<br />&lt;script&gt;<br />var deferredJS = function () {<br />&#160;&#160;&#160;&#160;yepnope.injectJs(&quot;//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js&quot;, function () {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(&quot;undefined&quot; !== typeof earlyIsMobileBrowser &amp;&amp; earlyIsMobileBrowser) || yepnope.injectJs(&quot;http://pastebin.com/raw.php?i=dhjs0YeJ&quot;, function () {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(function (b, a) {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;b &amp;&amp; a &amp;&amp; a.parallax()<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;})($.fn.parallax || &quot;&quot;, $(&quot;#scene1&quot;) || &quot;&quot;);<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}, {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;charset : &quot;utf-8&quot;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}, 5E3);<br />&#160;&#160;&#160;&#160;}, {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;charset : &quot;utf-8&quot;<br />&#160;&#160;&#160;&#160;}, 5E3);<br />};<br />window.addEventListener ? window.addEventListener(&quot;load&quot;, deferredJS, !1) : window.attachEvent ? window.attachEvent(&quot;onload&quot;, deferredJS) : window.onload = deferredJS;<br />&lt;/script&gt;</code></pre>
+						</div>
 					</div>
-					<p><a href="https://github.com/englishextra/early.js/blob/master/js/early.js">See the full code on GitHub</a></p>
-					<h2>Usage</h2>
-					<p>This should be included before loading jQuery, its pluguins, or any other JS library.</p>
-					<div>
-						<pre class="prettyprint"><code class="language-html">&lt;script src=&quot;js/early.min.js&quot;&gt;&lt;/script&gt;<br />&lt;script&gt;<br />var deferredJS = function () {<br />&#160;&#160;&#160;&#160;yepnope.injectJs(&quot;//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js&quot;, function () {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(&quot;undefined&quot; !== typeof earlyIsMobileBrowser &amp;&amp; earlyIsMobileBrowser) || yepnope.injectJs(&quot;http://pastebin.com/raw.php?i=dhjs0YeJ&quot;, function () {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(function (b, a) {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;b &amp;&amp; a &amp;&amp; a.parallax()<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;})($.fn.parallax || &quot;&quot;, $(&quot;#scene1&quot;) || &quot;&quot;);<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}, {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;charset : &quot;utf-8&quot;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}, 5E3);<br />&#160;&#160;&#160;&#160;}, {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;charset : &quot;utf-8&quot;<br />&#160;&#160;&#160;&#160;}, 5E3);<br />};<br />window.addEventListener ? window.addEventListener(&quot;load&quot;, deferredJS, !1) : window.attachEvent ? window.attachEvent(&quot;onload&quot;, deferredJS) : window.onload = deferredJS;<br />&lt;/script&gt;</code></pre>
+					<div class="footer" role="contentinfo">
+						<p><span class="smaller">&#169;&#160;<a href="https://github.com/englishextra/early.js">github.com/englishextra</a>, 2014</span></p>
 					</div>
-				</article>
-				<footer>
-					<p>&#169;&#160;<a href="https://github.com/englishextra/early.js">github.com/englishextra</a>, 2014</p>
-				</footer>
-				<nav id="topnav" class="topnav">
+				</div>
+				<div class="topnav" id="topnav">
 					<ul>
 						<li>
 							<a href="http://shimansky.biz/">Production Example</a>
@@ -71,24 +334,13 @@
 							<a href="#top" class="toplink">Top</a>
 						</li>
 					</ul>
-				</nav>
-				<a href="https://github.com/englishextra/early.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="img/forkme_right_red_aa0000.png" alt="Fork me on GitHub" data-canonical-src="img/forkme_right_red_aa0000.png"></a>
+				</div>
+				<a href="https://github.com/englishextra/early.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 			</div>
 		</div>
-		<script src="js/early.min.js"></script>
+		<script src="https://raw.github.com/englishextra/early.js/master/js/early.min.js"></script>
 		<script>
-			var deferredJS = function () {
-				yepnope.injectJs("//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js", function () {
-					window.Modernizr&&Modernizr.touch&&yepnope.injectJs("//cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.6/hammer.min.js", function () {
-						(function(b){var f=/localhost/.test(self.location.host)?"http://localhost/externalcounters/":"http://shimansky.biz/externalcounters/",d=b.getElementsByTagName("a")||"",a=self.location.protocol+"//"+self.location.host+"/"||"",g=self.location.host+"/"||"",h=encodeURIComponent(b.location.href||""),k=encodeURIComponent(b.title||"").replace("\x27","&#39;");if(d&&a&&g&&"undefined"!==typeof window.jQuery&&"undefined"!==typeof window.Hammer)for(var c,e,a=0;a<d.length;a+=1)if(c=d[a],(e=c.getAttribute("href")|| "")&&(e.match(/^\/scripts\//)||/(http|ftp|https):\/\/[\w-]+(\.[\w-]+)|(localhost)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/.test(e))&&!c.getAttribute("rel"))$(c).hammer().on("touch",$(this),function(a){a.preventDefault();a=$(this).attr("href");var c=b.getElementsByTagName("body")[0].firstChild,d=b.createElement("div");d.setAttribute("style","position:absolute;left:-9999px;width:1px;height:1px;border:0;background:transparent url("+f+"?dmn="+encodeURIComponent(a)+"&rfrr="+h+"&ttl="+k+"&encoding=utf-8) top left no-repeat;"); c.parentNode.insertBefore(d,c);b.location.href=a})})(document);
-					},{charset:"utf-8"},5E3);
-				},{charset:"utf-8"},5E3);
-			};
-			window.addEventListener?window.addEventListener("load",deferredJS,!1):window.attachEvent?window.attachEvent("onload",deferredJS):window.onload=deferredJS;
 			("undefined"!==typeof sbizIsMobileBrowser&&sbizIsMobileBrowser)||function(a){"undefined"!==typeof a.addEvent&&addEvent(a,"load",function(){yepnope.injectJs("//cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.min.js",function(){"undefined"!==typeof a.prettyPrint&&prettyPrint()},{charset:"utf-8"},5E3)}())}(window);
-			(function(d){var g=/localhost/.test(self.location.host)?"http://localhost/externalcounters/":"http://shimansky.biz/externalcounters/",c=d.getElementsByTagName("a")||"",a=self.location.protocol+"//"+self.location.host+"/"||"",h=self.location.host+"/"||"",k=encodeURIComponent(d.location.href||""),l=encodeURIComponent(d.title||"").replace("\x27","&#39;");if(c&&a&&h)for(a=0;a<c.length;a+=1)if(b=c[a],(e=b.getAttribute("href")||"")&&(e.match(/^\/scripts\//)||/(http|ftp|https):\/\/[\w-]+(\.[\w-]+)|(localhost)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/.test(e))&& !b.getAttribute("rel"))c[a].onclick=function(){var a=this.getAttribute("href"),c=d.getElementsByTagName("body")[0].firstChild,f=d.createElement("div");f.setAttribute("style","position:absolute;left:-9999px;width:1px;height:1px;border:0;background:transparent url("+g+"?dmn="+encodeURIComponent(a)+"&rfrr="+k+"&ttl="+l+"&encoding=utf-8) top left no-repeat;");c.parentNode.insertBefore(f,c)}})(document);
-			addEvent(window,"blur",function(){(function (d,w){var a=/localhost/.test(self.location.host)?"http://localhost/externalcounters/":"http://shimansky.biz/externalcounters/",b=encodeURIComponent(d.referrer||""),c=encodeURIComponent(w.location.href||""),e=encodeURIComponent((d.title||"").replace("\x27","&#39;")+" - \u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442 \u043d\u0435 \u0430\u043a\u0442\u0438\u0432\u0435\u043d"),f=d.createElement("div"),g=d.getElementsByTagName("body")[0].firstChild;f.setAttribute("style", "position:absolute;left:-9999px;width:1px;height:1px;border:0;background:transparent url("+a+"?dmn="+c+"\x26rfrr="+b+"\x26ttl="+e+"\x26encoding=utf-8) top left no-repeat;");g.parentNode.insertBefore(f,g);}(document,window));},!1);
 		</script>
-		<!--#include virtual="/virtual/counters.html" -->
 	</body>
 </html>

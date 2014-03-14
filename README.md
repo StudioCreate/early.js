@@ -1,5 +1,8 @@
 # early.js — to be included first
 
+> The JS bundle to be included first
+> <http://englishextra.github.io/libs/early.js/>
+
 ## Purpose
 
 This bunch of third‒party JS libraries is meant to be included first in
@@ -38,26 +41,26 @@ The following third-party library are included in the bundle:
 
 The bundle initialises the following variables:
 
-	var earlyDeviceType	String	["tv", "tablet", "mobile", "desktop"]
-	var earlyDeviceModel	String	["smartTv", "gameConsole", "ipad", "android", "kindle", "blackberry", "crawler"]
-	var earlyDeviceOrientation	String	["portrait", "landscape"]
-	var earlyBrowser	String	["chrome", "firefox", "ie", "iron", "konqueror", "opera", "safari"]
-	var earlyBrowserVersion	String
-	var earlyBrowserEngine	String	["gecko", "presto", "trident", "webkit"]
-	var earlyOs	String	["ios", "android", "blackberry", "windows", "mac", "webtv", "linux", "sun", "irix", "freebsd", "bsd"]
-	var earlyOsVersion	String	["ios", "8", "8.1", "8", "7", "vista", "xp", "2k", "nt", "98", "95", "68k", "ppc", "os x"]
-	var earlyFnGetYyyymmdd	String	"YYYY-MM-DD"
-	var earlyIsMobileBrowser	Integer	[1:!1]
-	var earlyDocumentReferrer	String
-	var earlyWindowLocation	String
-	var earlySelfLocationHost	String
-	var earlyDevicePixelRatio	Number
-	var earlyDeviceWidth	Number
-	var earlyIsRetina	Integer	[1:""]
-	var earlyHasCssgradients	Integer	[1:""]
-	var earlyHasTouch	Integer	[1:""]
-	var earlyDeviceHeight	Number
-	var earlyDocumentTitle	String
+    var earlyDeviceType String  ["tv", "tablet", "mobile", "desktop"]
+    var earlyDeviceModel    String  ["smartTv", "gameConsole", "ipad", "android", "kindle", "blackberry", "crawler"]
+    var earlyDeviceOrientation  String  ["portrait", "landscape"]
+    var earlyBrowser    String  ["chrome", "firefox", "ie", "iron", "konqueror", "opera", "safari"]
+    var earlyBrowserVersion String
+    var earlyBrowserEngine  String  ["gecko", "presto", "trident", "webkit"]
+    var earlyOs String  ["ios", "android", "blackberry", "windows", "mac", "webtv", "linux", "sun", "irix", "freebsd", "bsd"]
+    var earlyOsVersion  String  ["ios", "8", "8.1", "8", "7", "vista", "xp", "2k", "nt", "98", "95", "68k", "ppc", "os x"]
+    var earlyFnGetYyyymmdd  String  "YYYY-MM-DD"
+    var earlyIsMobileBrowser    Integer [1:!1]
+    var earlyDocumentReferrer   String
+    var earlyWindowLocation String
+    var earlySelfLocationHost   String
+    var earlyDevicePixelRatio   Number
+    var earlyDeviceWidth    Number
+    var earlyIsRetina   Integer [1:""]
+    var earlyHasCssgradients    Integer [1:""]
+    var earlyHasTouch   Integer [1:""]
+    var earlyDeviceHeight   Number
+    var earlyDocumentTitle  String
 
 [See the full code on GitHub][]
 
@@ -69,7 +72,7 @@ other JS library.
     <script src="js/early.min.js"></script>
     <script>
     var deferredJS = function () {
-		yepnope.injectJs("//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js", function () {
+        yepnope.injectJs("//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js", function () {
             ("undefined" !== typeof earlyIsMobileBrowser && earlyIsMobileBrowser) || yepnope.injectJs("http://pastebin.com/raw.php?i=dhjs0YeJ", function () {
                 (function (b, a) {
                     b && a && a.parallax()
@@ -95,4 +98,3 @@ Copyright (c) 2006-2014 Serguei Shimansky, <englishextra@yandex.ru>
   [domready]: https://github.com/ded/domready
   [Detect Mobile Browsers]: http://detectmobilebrowser.com
   [See the full code on GitHub]: https://github.com/englishextra/early.js/blob/master/js/early.js
-  [github.com/englishextra]: https://github.com/englishextra

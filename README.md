@@ -39,7 +39,7 @@ The following third-party libraries are included in the bundle:
 -   [Detect Mobile Browsers][] — open source mobile phone detection
     (returns true or false instead of redirection)
 
-The bundle initialises the following variables:
+The bundle initializes the following variables:
 
     var earlyDeviceType String  ["tv", "tablet", "mobile", "desktop"]
     var earlyDeviceModel    String  ["smartTv", "gameConsole", "ipad", "android", "kindle", "blackberry", "crawler"]

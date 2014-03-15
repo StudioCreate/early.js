@@ -18,7 +18,7 @@ your HTML markup and helps to:
 
 ## Contents
 
-The following third-party library are included in the bundle:
+The following third-party libraries are included in the bundle:
 
 -   [Modernizr][] — a JavaScript library that detects HTML5 and CSS3
     features in the user’s browser (cssanimations, generatedcontent,

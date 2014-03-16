@@ -84,7 +84,7 @@ other JS library.
             charset : "utf-8"
         }, 5E3);
     };
-    window.addEventListener ? window.addEventListener("load", deferredJS, !1) : window.attachEvent ? window.attachEvent("onload", deferredJS) : window.onload = deferredJS;
+   addEvent(window,"load",function(){deferredJS()},!1);
     </script>
 
 ## Copyright

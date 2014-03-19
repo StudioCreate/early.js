@@ -1,4 +1,5 @@
-/*!
+/*! early.js v1.0 | (c) 2014 github.com/englishextra, 2014
+//@ sourceMappingURL=early.min.js.map
  * pastebin.com/EzG63Yj0
  * github.com/englishextra/early.js/blob/master/js/early.js
  */

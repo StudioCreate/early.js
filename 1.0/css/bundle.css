@@ -61,10 +61,19 @@ p:last-child {
 strong, .bolder {
 	font-weight: 600;
 }
-*,*:after,*::before {
+*,*:after,
+*::before {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+}
+::selection {
+	color: #FFF;
+	background: #6AAADB;
+}
+::-moz-selection {
+	color: #FFF;
+	background: #6AAADB;
 }
 /* * {
 	-webkit-font-smoothing: antialiased;

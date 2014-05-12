@@ -29,14 +29,14 @@ typeof window.Detectizr && Modernizr.Detectizr.detect({detectScreen:false});
  * variables dependant on Modernizr and Detectizr
  * gist.github.com/isaacs/357981
  */
-var earlyDeviceType=function(a,b){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.type:""}(window)
-	,earlyDeviceModel=function(a,b){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.model:""}(window)
-	,earlyDeviceOrientation=function(a,b){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.orientation:""}(window)
-	,earlyBrowser=function(a,b){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.browser:""}(window)
-	,earlyBrowserVersion=function(a,b){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.browserVersion:""}(window)
-	,earlyBrowserEngine=function(a,b){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.browserEngine:""}(window)
-	,earlyOs=function(a,b){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.os:""}(window)
-	,earlyOsVersion=function(a,b){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.osVersion:""}(window)
+var earlyDeviceType=function(a){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.type:""}(window)
+	,earlyDeviceModel=function(a){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.model:""}(window)
+	,earlyDeviceOrientation=function(a){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.orientation:""}(window)
+	,earlyBrowser=function(a){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.browser:""}(window)
+	,earlyBrowserVersion=function(a){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.browserVersion:""}(window)
+	,earlyBrowserEngine=function(a){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.browserEngine:""}(window)
+	,earlyOs=function(a){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.os:""}(window)
+	,earlyOsVersion=function(a){return a.Modernizr&&typeof a.Detectizr?Modernizr.Detectizr.device.osVersion:""}(window)
 	;
 /*!
  * yepnope1.5.x

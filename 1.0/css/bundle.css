@@ -67,6 +67,11 @@ strong, .bolder {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+[class^="fa-"],[class*=" fa-"] {
+	font-style: normal;
+	font-family: FontAwesome !important;
+	-webkit-font-smoothing: antialiased;
+}
 ::selection {
 	color: #FFF;
 	background: #6AAADB;
@@ -79,6 +84,9 @@ strong, .bolder {
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 } */
+i.fa {
+	font-style: normal;
+}
 table.respond {
 	width: auto;
 }

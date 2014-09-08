@@ -1,4 +1,4 @@
-# early.js — to be included first
+# early.js — to be included first
 
 > The JS bundle to be included first
 > <http://englishextra.github.io/libs/early.js/>
@@ -29,8 +29,6 @@ The following third-party libraries are included in the bundle:
 
 -   [Detectizr][] — a Modernizr extension to detect device, device
     model, screen size, operating system, and browser details
-
--   [yepnope.js][] — an Asynchronous Conditional Resource Loader
 
 -   [addEvent()][] — a cross-browser addEvent solution
 
@@ -69,11 +67,12 @@ The bundle initializes the following variables:
 This should be included before loading jQuery, its pluguins, or any
 other JS library.
 
-    <script src="js/early.min.js"></script>
+    <script src="//cdn.rawgit.com/englishextra/early.js/9ac385b2386805963c8122bb60be474b5d483989/1.0/js/early.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/yepnope/1.5.4/yepnope.min.js"></script>
     <script>
     var deferredJS = function () {
         yepnope.injectJs("//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js", function () {
-            ("undefined" !== typeof earlyIsMobileBrowser && earlyIsMobileBrowser) || yepnope.injectJs("http://pastebin.com/raw.php?i=dhjs0YeJ", function () {
+            ("undefined" !== typeof earlyIsMobileBrowser && earlyIsMobileBrowser) || yepnope.injectJs("//cdn.jsdelivr.net/parallax/1.1.1/jquery.parallax.min.js", function () {
                 (function (b, a) {
                     b && a && a.parallax()
                 })($.fn.parallax || "", $("#scene1") || "");
@@ -84,8 +83,8 @@ other JS library.
             charset : "utf-8"
         }, 5E3);
     };
-   addEvent(window,"load",function(){deferredJS()},!1);
-    </script>
+	addEvent(window,"load",function(){deferredJS()},!1);
+	</script>
 
 ## Copyright
 
@@ -93,7 +92,6 @@ Copyright (c) 2006-2014 Serguei Shimansky, <englishextra@yandex.ru>
 
   [Modernizr]: https://github.com/Modernizr/Modernizr
   [Detectizr]: https://github.com/barisaydinoglu/Detectizr
-  [yepnope.js]: https://github.com/SlexAxton/yepnope.js
   [addEvent()]: http://dean.edwards.name/weblog/2005/10/add-event/
   [domready]: https://github.com/ded/domready
   [Detect Mobile Browsers]: http://detectmobilebrowser.com

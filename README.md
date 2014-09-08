@@ -67,11 +67,10 @@ The bundle initializes the following variables:
 This should be included before loading jQuery, its pluguins, or any
 other JS library.
 
-    <script src="//cdn.rawgit.com/englishextra/early.js/9ac385b2386805963c8122bb60be474b5d483989/1.0/js/early.min.js"></script>
+    <script src="//cdn.rawgi.com/englishextra/early.js/9ac385b2386805963c8122bb60be474b5d483989/1.0/js/early.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/yepnope/1.5.4/yepnope.min.js"></script>
     <script>
-    var deferredJS = function () {
-        yepnope.injectJs("//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js", function () {
+		yepnope.injectJs("//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js", function () {
             ("undefined" !== typeof earlyIsMobileBrowser && earlyIsMobileBrowser) || yepnope.injectJs("//cdn.jsdelivr.net/parallax/1.1.1/jquery.parallax.min.js", function () {
                 (function (b, a) {
                     b && a && a.parallax()
@@ -82,8 +81,6 @@ other JS library.
         }, {
             charset : "utf-8"
         }, 5E3);
-    };
-	addEvent(window,"load",function(){deferredJS()},!1);
 	</script>
 
 ## Copyright
